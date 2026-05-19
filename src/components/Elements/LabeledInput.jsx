@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import Input from "./Input";
 
 function LabeledInput(props) {
   const { label, id, type, ...rest } = props;
@@ -14,7 +15,7 @@ function LabeledInput(props) {
         {label}
       </label>
       <div className="relative">
-        <input
+        <Input
           className={`py-3 pl-4 ${isPassword ? "pr-12" : "pr-4"} text-sm rounded-md w-full bg-special-mainBg border border-gray-03 text-gray-01 focus:border-black focus:outline-none focus:ring-0`}
           id={id}
           type={inputType}
