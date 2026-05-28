@@ -30,7 +30,8 @@ function GaugePointer() {
 }
 
 export default function CompositionExample(props) {
-  const { data } = props;
+  const { data, value } = props;
+  const gaugeValue = data ?? value ?? 0;
 
   return (
     <GaugeContainer
@@ -38,7 +39,7 @@ export default function CompositionExample(props) {
       height={80}
       startAngle={-90}
       endAngle={90}
-      value={data}
+      value={gaugeValue}
       sx={() => ({
         [`& .value-arc`]: {
           fill: "#299D91",
