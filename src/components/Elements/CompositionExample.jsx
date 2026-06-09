@@ -11,8 +11,16 @@ function GaugePointer(props) {
   const { valueAngle, outerRadius, cx, cy } = useGaugeState();
   const { color } = props;
 
-  if (valueAngle === null) {
-    // No value to display
+  if (
+    valueAngle == null ||
+    cx == null ||
+    cy == null ||
+    outerRadius == null ||
+    !Number.isFinite(valueAngle) ||
+    !Number.isFinite(cx) ||
+    !Number.isFinite(cy) ||
+    !Number.isFinite(outerRadius)
+  ) {
     return null;
   }
 
@@ -20,6 +28,7 @@ function GaugePointer(props) {
     x: cx + outerRadius * Math.sin(valueAngle),
     y: cy - outerRadius * Math.cos(valueAngle),
   };
+
   return (
     <g>
       <circle cx={cx} cy={cy} r={5} fill={color} />

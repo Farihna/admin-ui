@@ -93,7 +93,7 @@ function FormSignUp() {
       <div className="flex justify-center mt-6">
         <p className="text-sm text-gray-03">
           Already have an account?{" "}
-          <Link to="/signin" className="text-primary font-bold cursor-pointer hover:underline">
+          <Link to="/login" className="text-primary font-bold cursor-pointer hover:underline">
             Sign in here
           </Link>
         </p>
