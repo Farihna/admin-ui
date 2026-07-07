@@ -25,6 +25,10 @@ html {
   --color-special-green: #4daf6e;
   --color-special-red: #e73d1c;
   --color-Special-Red2: #b83016;
+  --color-sidebar-bg: #191919;
+
+  --color-btn-primary: #299d91; 
+  --color-text-btn-primary: #ffffff;
 }
 
 .theme-green {
@@ -45,4 +49,31 @@ html {
 
 .theme-brown {
   --color-primary: #8b4513;
+}
+
+.theme-dark {
+  --color-special-mainBg: #323232;
+  --color-white: #292929;
+
+  --color-defaultBlack: #ffffff;
+  --color-secondary: #e8e8e8;
+  --color-gray-01: #cccccc;
+  --color-gray-02: #aaaaaa;
+  --color-gray-03: #888888;
+
+  --color-gray-05: #2d2d2d;
+  --color-gray-06: #1a1a1a;
+
+  --color-btn-primary: #e8e8e8; 
+  --color-text-btn-primary: #191919;
+
+  input {
+    background-color: #323232 !important; 
+    color: #ffffff !important;           
+    border-color: #444444 !important;    
+  }
+
+  label {
+    color: #ffffff !important;           
+  }
 }

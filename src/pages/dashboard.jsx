@@ -15,11 +15,12 @@ import {
   expensesStatistics,
 } from "../data";
 import { AuthContext } from "../context/authContext";
-import { goalService } from "../services/dataService";
+import { goalService, billService } from "../services/dataService";
 import AppSnackbar from "../components/Elements/AppSnackbar";
 
 function dashboard() {
   const [goals, setGoals] = useState({});
+  const [bills, setBills] = useState([]);
 
   const [snackbar, setSnackbar] = useState({
     open: false,
@@ -47,8 +48,25 @@ function dashboard() {
     }
   };
 
+  const fetchBills = async () => {
+    try {
+      const data = await billService();
+      setBills(data);
+    } catch (err) {
+      setSnackbar({
+        open: true,
+        message: "Gagal mengambil data bills",
+        severity: "error",
+      });
+      if (err.status === 401) {
+        logout();
+      }
+    }
+  };
+
   useEffect(() => {
     fetchGoals();
+    fetchBills();
   }, []);
 
   return (
