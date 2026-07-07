@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../Elements/Icon";
+import Icon from "../Elements/icon";
 
 function CardExpense(props) {
   const { category, amount, percentage, trend, detail = [] } = props;
